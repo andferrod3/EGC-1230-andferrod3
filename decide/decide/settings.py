@@ -16,7 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Especifica aqui tu UVUS
-UVUS = 'UVUS-to-Change'
+UVUS = 'andferrod3'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -168,6 +168,8 @@ KEYBITS = 256
 ALLOWED_VERSIONS = ['v1', 'v2']
 DEFAULT_VERSION = 'v1'
 
+BASEURL = 'https://examen-andres.herokuapp.com'
+
 try:
     from local_settings import *
 except ImportError:
@@ -183,3 +185,10 @@ if os.path.exists("config.jsonnet"):
 
 
 INSTALLED_APPS = INSTALLED_APPS + MODULES
+
+APIS = {}
+
+import django_heroku
+django_heroku.settings(locals())
+
+
