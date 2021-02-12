@@ -19,3 +19,10 @@ script:
   - coverage run --branch --source=. ./manage.py test store --keepdb
   - coverage xml
   - python-codacy-coverage -r coverage.xml
+notifications:
+  email:
+    recipients:
+      - andferrod3@alum.us.es
+    on_success: never 
+    on_failure: always
+
